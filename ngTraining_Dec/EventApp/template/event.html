@@ -1,0 +1,48 @@
+﻿<div style="padding-left: 20px; padding-right: 20px">
+    <div class="row">
+        <div class="span11">
+            <h2>{{event.name}} </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            <div><strong>Date :</strong> {{event.date | date :'dd/MMM/yy'}} </div>
+            <div><strong>Time :</strong> {{event.date | date : 'hh:mm a'}} </div>
+        </div>
+        <div class="span3">
+            <div><strong>Location :</strong> {{event.location}} </div>
+            <div><strong>City :</strong> {{event.city}} </div>
+        </div>
+    </div>
+    <br />
+    Session
+            <select ng-model="sortOrder" class="input-small">
+                <option selected value="name">Name</option>
+                <option value="-voteCount">Votes</option>
+            </select>
+    Filter:
+            <select ng-model="query.level" class="input-medium">
+                <option value="">All</option>
+                <option value="introductory">Introductory</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+    <ul class="thumbnails">
+        <li ng-repeat="session in event.sessions | orderBy:sortOrder | filter:query " id="session{{session.id}}">
+            <div class="row session">
+                <div vote-widget="" upvote="upVoteSession(session)" downvote="downVoteSession(session)" votecount="session.voteCount"></div>
+                <div class="well span9">
+                    <session-title name="{{session.name}}">
+                    <!--<h4 class="well-title">{{session.name}} </h4>-->
+                        <h6 style="margin-top: -10px">{{session.author}}</h6>
+                        <span>Duration: {{session.duration |duration }}</span><br />
+                        <span>Level: {{session.level}}</span>
+                        <p>{{session.abstract}}</p>
+                    </session-title>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+
+</div>

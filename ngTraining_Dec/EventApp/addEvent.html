@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../app/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../app/css/app.css" rel="stylesheet" />
+    <script src="../Scripts/angular.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="eventApp">
+    <div class="container" >
+        <div style="padding-left: 20px; padding-right: 20px" ng-controller="EditEventController">
+            <div class="container">
+                <form name="eventForm">
+                    <fieldset>
+                        <label for="eventName">Name:</label>
+                        <input type="text" required ng-model="event.name" id="eventName" name="eventName" placeholder="Enter event name" />
+                        <label for="eventAuthor">Author:</label>
+                        <input type="text"  ng-model="event.author" id="eventAuthor" placeholder="Enter author" />
+                        <label for="eventDuration">Duration:</label>
+                        <input type="text" ng-model="event.duration" id="eventDuration" placeholder="Enter Duration" />
+                        <label for="eventDate">Date:</label>
+                        <input type="text" ng-model="event.date" id="eventDate" placeholder="Enter date ('dd/mm/yyyy')" />
+                    </fieldset>
+                    <input type="Submit" ng-disabled="eventForm.$invalid" ng-click="addEvent(event,eventForm)" class="btn btn-primary" value="Save" />
+                    <input type="button" class="btn btn-default" value="Cancel" />
+                </form>
+            </div>
+            
+    </div>
+</body>
+</html>

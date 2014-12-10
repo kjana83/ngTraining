@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Event App</title>
+    <link href="../app/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../app/css/app.css" rel="stylesheet" />
+
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/angular-route.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/duration.filter.js"></script>
+    <script src="js/editEvent.controller.js"></script>
+    <script src="js/eventData.service.js"></script>
+    <script src="js/eventDetails.controller.js"></script>
+    <script src="js/evntlist.controller.js"></script>
+    <script src="js/exceptionHandler.js"></script>
+    <script src="js/integer.directive.js"></script>
+    <script src="js/mySample.directive.js"></script>
+    <script src="js/myTitle.directive.js"></script>
+    <script src="js/numKeys.directive.js"></script>
+    <script src="js/voteWidget.directive.js"></script>
+</head>
+<body data-ng-app="eventApp">
+    <div class="container" >
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li> <a href="#/newEvent">Create Event</a> </li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-ng-view="">
+
+        </div>
+        
+    </div>
+</body>
+</html>

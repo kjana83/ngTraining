@@ -1,0 +1,19 @@
+﻿<div style="padding-left: 20px; padding-right: 20px">
+    <div class="container">
+        <form name="eventForm">
+            <fieldset>
+                <label for="eventName">Name:</label>
+                <input type="text" required ng-model="event.name" id="eventName" name="eventName" placeholder="Enter event name" />
+                <label for="eventAuthor">Author:</label>
+                <input type="text" ng-model="event.author"  id="eventAuthor" placeholder="Enter author" />
+                <label for="eventDuration">Duration:</label>
+                <input type="text" ng-model="event.duration" id="eventDuration" placeholder="Enter Duration" />
+                <label for="eventDate">Date:</label>
+                <input type="text" ng-model="event.date" num-keys=""  name="eventDate" integer=""  ng-pattern="/\d\d/\d\d/\d\d\d\d/" id="eventDate" placeholder="Enter date ('dd/mm/yyyy')" />
+                <span ng-show="eventForm.eventDate.$error.integer" > Invalid integer </span>
+            </fieldset>
+            <input type="Submit" ng-disabled="eventForm.$invalid" ng-click="addEvent(event,eventForm)" class="btn btn-primary" value="Save" />
+            <input type="button" class="btn btn-default" value="Cancel" />
+        </form>
+    </div>
+</div>
